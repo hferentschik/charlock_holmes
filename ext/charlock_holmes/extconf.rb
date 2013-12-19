@@ -31,6 +31,7 @@ Dir.chdir("#{CWD}/src") do
   Dir.chdir(File.join(dir, 'source')) do
     sys("LDFLAGS= CXXFLAGS=\"-O2 -fPIC\" CFLAGS=\"-O2 -fPIC\" ./configure --prefix=#{CWD}/dst/ --disable-tests --disable-samples --disable-icuio --disable-extras --disable-layout --enable-static --disable-shared")
     sys("make install")
+    sys("make distclean")
   end
 end
 
